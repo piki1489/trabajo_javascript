@@ -12,86 +12,55 @@ const getTareaOne = document.getElementById('getTareaOne');
 const makeTarea = document.getElementById('makeTarea');
 const btnBorrar = document.getElementById('btnBorrar')
 
-
-
-
-
+const tasks = document.querySelector('.tasks')
 const btnSearch = document.getElementById('btnSearch');
-
 pintarTareas();
-
-
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const newTarea = {
+        id: arrTareas.length + 1,
         titulo: inputTarea.value,
         prioridad: headSave.value,
     }
     arrTareas.push(newTarea);
-
+    localStorage.setItem('tasks', JSON.stringify(arrTareas));
+    pintarTareas();
 });
 
 
-
-
-
-
 function pintarTareas() {
-    getTareaOne.innerHTML = '';
-
+    let tasksHtml = '';
     for (let _tarea of arrTareas) {
-        const article = document.createElement('article');
-        if (_tarea.prioridad === ('ugente')) {
-            article.classList.add('urgente');
-
-        } else if (_tarea.prioridad === ('diaria')); {
-            article.classList.add('diaria');
+        let color = '';
+        if (_tarea.prioridad === ('urgente')) {
+            color = 'urgente';
         }
-        if (_tarea.prioridad === ('semanal')) {
-            article.classList.add('semanal');
+        else if (_tarea.prioridad === ('diaria')) {
+            color = 'diaria';
         }
-
+        else if (_tarea.prioridad === ('semanal')) {
+            color = 'semanal';
+        }
         else if (_tarea.prioridad === ('mensual')) {
-            article.classList.add('mensual');
+            color = 'mensual';
         }
-        getTareaOne.append(article)
-
+        tasksHtml += `<section class="${color}">
+        <article>
+            <h2>${_tarea.titulo}</h2>
+            <button id="${_tarea.id}" class="deleteButton">BORRAR</button>
+        </article>
+        </section>`;
+    }
+    tasks.innerHTML = tasksHtml;
+    const deleteButton = document.querySelectorAll('.deleteButton');
+    for (const button of deleteButton) {
+        button.addEventListener('click', event => {
+            event.preventDefault();
+            const index = arrTareas.findIndex(tarea => tarea.id === parseInt(event.target.id));
+            arrTareas.splice(index, 1);
+            localStorage.setItem('tasks', JSON.stringify(arrTareas));
+            pintarTareas();
+        });
     }
 }
-
-
-//         const h2Tarea = document.createElement('h2');
-//         h2Tarea.innerText = `${_tarea.titulo}`
-
-
-//         const btnBorrar = document.createElement('button');
-//         btnBorrar.innerText = 'Borrar';
-//         btnBorrar.addEventListener('click', (event) => {
-//             event.target.parentNode.remove();
-//         });
-
-//         article.append(h2Tarea, btnBorrar);
-//         getTareaOne.append(article)
-//     }
-// }
-//             // // arrClientes = arrClientes.filter((cli) => {
-            //     return cli.email !== cliente.email;
-            // });
-
-
-// function pintarTareas() {
-//     mainOptions.innerHTML = '';
-//     for (let tareas of arrTareas) {
-//         const article = document.createElement('article');
-
-//         const h2Tarea = document.createElement('h2');
-//         h2Tarea.innerHTML = `${tarea.titulo} `
-//         // ${tarea.prioridad};
-
-//         const mainOptions = document.createElement('button')
-//         article.append(h2Tarea, mainOptions)
-
-//         save.append(article)
-//     }
-// }
