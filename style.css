@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 60em;
+    padding-top: 5em;
+}
+
+header {
+    background-color: rgb(89, 157, 217);
+    height: 10vh;
+    text-align: start
+}
+
+.wrapper input {
+    margin-top: 2.5vh;
+    margin-left: 10px;
+}
+
+
+
+.btnSearch {
+    background-color: rgb(24, 18, 18);
+    height: 7vh;
+    text-align: start;
+}
+
+.urgente {
+    background-color: red;
+}
+
+.diaria {
+    background-color: orange;
+}
+
+.semanal {
+    background-color: yellow;
+}
+
+.mensual {
+    background-color: green;
+}
+
+/* #getTareaOne {
+    /* background-color: red;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#getTareaOne h2 {
+    font-weight: 900;
+    padding-top: 30px;
+
+
+}
+
+
+#getTareaOne button {
+    height: 100%;
+    width: 20%;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#getTareaTwo {
+    background-color: orange;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#getTareaTwo h2 {
+    font-weight: 900;
+    padding-top: 30px;
+
+
+}
+
+
+#getTareaTwo button {
+    height: 100%;
+    width: 20%;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#getTareaThree {
+    background-color: yellow;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#getTareaThree button {
+    height: 100%;
+    width: 20%;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#getTareaThree h2 {
+    font-weight: 900;
+    padding-top: 30px;
+
+
+}
+
+#getTareaFour {
+    background-color: green;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#getTareaFour button {
+    height: 100%;
+    width: 20%;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#getTareaFour h2 {
+    font-weight: 900;
+    padding-top: 30px;
+
+
+} */
